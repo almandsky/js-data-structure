@@ -1,0 +1,24 @@
+{
+  "name": "js-data-structure",
+  "version": "1.0.0",
+  "description": "JavaScript Data Structure",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almandsky/js-data-structure.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Data",
+    "Structure"
+  ],
+  "author": "almandsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/almandsky/js-data-structure/issues"
+  },
+  "homepage": "https://github.com/almandsky/js-data-structure#readme"
+}
