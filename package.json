@@ -4,7 +4,7 @@
   "description": "JavaScript Data Structure",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/almandsky/js-data-structure/issues"
   },
-  "homepage": "https://github.com/almandsky/js-data-structure#readme"
+  "homepage": "https://github.com/almandsky/js-data-structure#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }

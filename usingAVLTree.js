@@ -48,7 +48,7 @@ module.exports = function usingAVLTree() {
     avlTree.insert(75);*/
 
     console.log('********* raw data structure ***********');
-    console.log(avlTree.getRoot());
+    console.log(avlTree.print());
 
     /*avlTree.remove(12);
     avlTree.remove(15);
