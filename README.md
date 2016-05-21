@@ -6,9 +6,13 @@ I am also rewriting it by using the node js to execute the example, and will als
 
 ## How to run the code
 
-```node usingGraph.js```
+```bash
+node usingGraph.js
+```
 
 ## How to run the test
 
-```npm install;
-npm test;```
+```bash
+npm install;
+npm test;
+```
