@@ -14,6 +14,14 @@ module.exports = function usingAVLTree() {
     avlTree.insert(13);
     avlTree.insert(12);
     avlTree.insert(11);
+    avlTree.insert(10);
+    avlTree.insert(9);
+    avlTree.insert(8);
+    avlTree.insert(16);
+    avlTree.insert(17);
+    avlTree.insert(18);
+    avlTree.insert(19);
+    avlTree.insert(20);
 
     //RR rotation
     /*avlTree.insert(50);
