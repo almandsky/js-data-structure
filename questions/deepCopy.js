@@ -1,4 +1,3 @@
-
 /*
 Deep copy the linked list
 
