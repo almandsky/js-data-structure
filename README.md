@@ -18,3 +18,7 @@ node ./lib-exec/usingGraph.js
 npm install;
 npm test;
 ```
+
+## Using ES6
+
+Start integrating with the babel to support ES6.
