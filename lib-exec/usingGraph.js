@@ -1,6 +1,6 @@
 module.exports = function usingGraph() {
-    var Graph = require('./lib/Graph');
-    var Stack = require('./lib/Stack');
+    var Graph = require('../lib/Graph');
+    var Stack = require('../lib/Stack');
     var graph = new Graph();
 
     var myVertices = ['A','B','C','D','E','F','G','H','I'];

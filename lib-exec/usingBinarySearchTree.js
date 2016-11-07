@@ -1,5 +1,5 @@
 module.exports = function usingHashTableSeparateChaining() {
-    var BinarySearchTree = require('./lib/BinarySearchTree');
+    var BinarySearchTree = require('../lib/BinarySearchTree');
     var tree = new BinarySearchTree();
 
     tree.insert(11);

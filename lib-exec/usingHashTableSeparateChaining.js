@@ -1,5 +1,5 @@
 module.exports = function usingHashTableSeparateChaining() {
-    var HashTableSeparateChaining = require('./lib/HashTableSeparateChaining');
+    var HashTableSeparateChaining = require('../lib/HashTableSeparateChaining');
 
     var hashTableSeparateChaining = new HashTableSeparateChaining();
 

@@ -1,5 +1,5 @@
 module.exports = function usingAVLTree() {
-    var AVLTree = require('./lib/AVLTree');
+    var AVLTree = require('../lib/AVLTree');
     var avlTree = new AVLTree();
 
     avlTree.insert(1);
