@@ -19,6 +19,9 @@ class Sorting {
   }
 
   static selectionSort(array) {
+    if (!array || !array.length) {
+      return array;
+    }
     let indexMin = 0;
     for (let i = 0; i < array.length - 1; i += 1) {
       indexMin = i;
@@ -37,6 +40,9 @@ class Sorting {
   }
 
   static insertionSort(array) {
+    if (!array || !array.length) {
+      return array;
+    }
     let temp = 0;
     let j = 0;
     for (let i = 1; i < array.length; i += 1) {
