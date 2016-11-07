@@ -2,3 +2,4 @@
 dist
 .nyc_output
 coverage
+ynpm-debug.log
