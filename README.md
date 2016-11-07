@@ -7,7 +7,7 @@ I am also rewriting it by using the node js to execute the example, and will als
 ## How to run the code
 
 ```bash
-node usingGraph.js
+node ./lib-exec/usingGraph.js
 ```
 
 ## How to run the test
