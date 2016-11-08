@@ -5,6 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/js-data-structure.svg)](https://www.npmjs.com/package/js-data-structure)
 [![npm download](https://img.shields.io/npm/dt/js-data-structure.svg)](https://www.npmjs.com/package/js-data-structure)
 [![MTI License](https://img.shields.io/npm/l/js-data-structure.svg)](http://opensource.org/licenses/MIT)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 The code here is copying from https://github.com/loiane/javascript-datastructures-algorithms, and the purpose is to make it easier to reference without the folder structure of the book chapter.
 
