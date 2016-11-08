@@ -27,3 +27,12 @@ npm test;
 ## Using ES6
 
 Start integrating with the babel to support ES6.
+
+## include in the browser
+
+```
+import { Sorting } from 'js-data-structure';
+
+console.log(Sorting.bubbleSort([5, 4, 3, 2, 1]));
+
+```
