@@ -1,4 +1,4 @@
-import Graph from '../lib-es6/graph';
+import Graph from '../src/lib-es6/graph';
 
 const expect = require('chai').expect;
 

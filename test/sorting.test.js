@@ -1,4 +1,4 @@
-import Sorting from '../lib-es6/sorting';
+import Sorting from '../src/lib-es6/sorting';
 
 import { testArray1, testArray2, sortedArray } from './sorting.mock';
 
