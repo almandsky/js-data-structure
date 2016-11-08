@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/ynpm', 'lint' ]
+2 silly now 2016-11-08T09:36:13.864Z
+3 silly hostname trollpool-lm
+4 silly platform darwin
+5 silly arch x64
+6 silly release 15.6.0
+7 silly node { http_parser: '2.7.0',
+7 silly node   node: '6.4.0',
+7 silly node   v8: '5.0.71.60',
+7 silly node   uv: '1.9.1',
+7 silly node   zlib: '1.2.8',
+7 silly node   ares: '1.10.1-DEV',
+7 silly node   icu: '57.1',
+7 silly node   modules: '48',
+7 silly node   openssl: '1.0.2h',
+7 silly node   ynpm: '3.1.27',
+7 silly node   npm: '2.14.0' }
+8 info using ynpm@3.1.27
+9 info using npm@2.14.0
+10 info using node@v6.4.0
+11 silly conf { argv: { remain: [ 'lint' ], cooked: [ 'lint' ], original: [ 'lint' ] } }
+12 silly argv undefined
+13 silly looking for command:  install
+14 silly found proxy command for install
+15 silly looking for command:  lint
+16 silly found proxy command for lint
+17 info attemping to lint: ./package.json
+18 info package.json valid? false
+19 error Missing required field yahoo
+20 warn Missing recommended field contributors
+21 reco Missing optional field engines
+22 info command completed in: 0.65 seconds
+23 info Fixing package.json /Users/skychen/Documents/nodejs/js-data-structure/package.json
+24 verbose stack Error: package.json contains errors
+24 verbose stack     at ynpmlint (/usr/local/lib/node_modules/ynpm/lib/lint.js:21:15)
+24 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/ynpm/bin/ynpm-cli.js:116:9)
+24 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/ynpm/index.js:216:18)
+24 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:67:7)
+24 verbose stack     at process._tickCallback (internal/process/next_tick.js:98:9)
+25 verbose cwd /Users/skychen/Documents/nodejs/js-data-structure
+26 error Darwin 15.6.0
+27 error argv "/usr/local/bin/node" "/usr/local/bin/ynpm" "lint"
+28 error node v6.4.0
+29 error npm -v 2.14.0
+30 error ynpm -v 3.1.27
+31 error package.json contains errors
+32 error If you need help, you may report this log at:
+32 error http://yo/ynpm-support (or http://yo/sd-support)
+33 verbose exit [ 1, true ]
