@@ -1,6 +1,10 @@
 # JavaScript Data Structure
 
 [![Build Status](https://travis-ci.org/almandsky/js-data-structure.svg?branch=master)](https://travis-ci.org/almandsky/js-data-structure)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/almandsky/js-data-structure.svg)](https://codecov.io/gh/almandsky/js-data-structure)
+[![npm version](https://img.shields.io/npm/v/js-data-structure.svg)](https://www.npmjs.com/package/js-data-structure)
+[![npm download](https://img.shields.io/npm/dt/js-data-structure.svg)](https://www.npmjs.com/package/js-data-structure)
+[![MTI License](https://img.shields.io/npm/l/js-data-structure.svg)](http://opensource.org/licenses/MIT)
 
 The code here is copying from https://github.com/loiane/javascript-datastructures-algorithms, and the purpose is to make it easier to reference without the folder structure of the book chapter.
 
