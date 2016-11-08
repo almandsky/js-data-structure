@@ -4,3 +4,4 @@ webpack.config.js
 /questions/
 /lib-test/
 /dist/
+/coverage/

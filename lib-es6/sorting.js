@@ -57,10 +57,6 @@ class Sorting {
     return array;
   }
 
-  static mergeSort(array) {
-    return array;
-  }
-
 }
 
 module.exports = Sorting;

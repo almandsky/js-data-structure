@@ -5,15 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "build": "babel --copy-files --out-dir dist --ignore *.test.js lib-es6",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "commit": "git-cz",
+    "cover": "nyc --reporter=lcov --reporter=text npm t",
     "lint": "eslint --ignore-path .eslintignore -c .eslintrc .",
     "prebuild": "rimraf dist",
-    "watch:test": "npm t -- -w",
-    "test": "mocha --compilers js:babel-register --reporter spec",
-    "cover": "nyc npm t",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "start": "webpack-dev-server --content-base src --inline --hot",
+    "test": "mocha --compilers js:babel-register -R spec",
     "validate": "npm ls",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "watch:test": "npm t -- -w"
   },
   "repository": {
     "type": "git",
@@ -33,11 +35,13 @@
   "devDependencies": {
     "babel-cli": "6.18.0",
     "babel-core": "^6.16.0",
+    "babel-plugin-istanbul": "^2.0.3",
     "babel-plugin-transform-class-properties": "^6.16.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-2": "6.18.0",
     "babel-register": "6.18.0",
+    "codecov.io": "^0.1.6",
     "commitizen": "2.8.6",
     "css-loader": "^0.25.0",
     "cz-conventional-changelog": "1.2.0",
@@ -45,6 +49,7 @@
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.1.0",
     "ghooks": "^1.3.2",
+    "istanbul": "^0.4.5",
     "mocha": "^2.5.3",
     "nyc": "8.4.0",
     "precommit-hook": "^3.0.0",
@@ -62,11 +67,12 @@
   },
   "pre-commit": [
     "lint",
-    "test"
+    "cover",
+    "check-coverage"
   ],
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint && npm run test"
+      "pre-commit": "npm run lint && npm run cover && npm run check-coverage"
     },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
