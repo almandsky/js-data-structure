@@ -27,7 +27,7 @@ function shuffle(arrayInput) {
   return array;
 }
 
-const sortedArray = generateArray(10000);
+const sortedArray = generateArray(100);
 const testArray1 = shuffle(sortedArray);
 const testArray2 = shuffle(sortedArray);
 
