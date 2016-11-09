@@ -145,7 +145,7 @@ class Sorting {
    * @return {Array} sorted array
    */
   static quickSort(array) {
-    if (!array || !array.length || array.length === 1) {
+    if (!array || !array.length) {
       return array;
     }
     this.quick(array, 0, array.length - 1);
@@ -162,7 +162,7 @@ class Sorting {
    */
   static quick(array, left, right) {
     if (array.length > 1) {
-      let index = this.partition(array, left, right);
+      const index = this.partition(array, left, right);
       if (left < index - 1) {
         this.quick(array, left, index - 1);
       }
