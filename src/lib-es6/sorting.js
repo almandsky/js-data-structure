@@ -136,6 +136,81 @@ class Sorting {
     return result;
   }
 
+  /**
+   * quick sort
+   * Complexity: O(n log(n))
+   * Space Complexity: O(Log(n))
+   * @method quickSort
+   * @param {Array} array - input array
+   * @return {Array} sorted array
+   */
+  static quickSort(array) {
+    if (!array || !array.length || array.length === 1) {
+      return array;
+    }
+    this.quick(array, 0, array.length - 1);
+    return array;
+  }
+
+  /**
+   * Recursive method to perform the quick sort
+   * @method quick
+   * @param {Array} array - input array
+   * @param {Integer} left - left pointer
+   * @param {Integer} right - right pointer
+   * @return {Void}
+   */
+  static quick(array, left, right) {
+    if (array.length > 1) {
+      let index = this.partition(array, left, right);
+      if (left < index - 1) {
+        this.quick(array, left, index - 1);
+      }
+      if (index < right) {
+        this.quick(array, index, right);
+      }
+    }
+  }
+
+  /**
+   * get the index of the left pointer that will be used to create the sub-arrays
+   * @method partition
+   * @param {Array} array - input array
+   * @param {Integer} left - left pointer
+   * @param {Integer} right - right pointer
+   * @return {Integer} pivot
+   */
+  static partition(array, left, right) {
+    // get the pivot as the middle item of the array
+    const pivot = array[Math.floor((right + left) / 2)];
+    let i = left;
+    let j = right;
+
+    while (i <= j) {
+      // move the left pointer until we find item is greater than the pivot
+      while (array[i] < pivot) {
+        i += 1;
+      }
+
+      // move the right pointer until we find item is smaller than the pivot
+      while (array[j] > pivot) {
+        j -= 1;
+      }
+
+      if (i <= j) {
+        if (i !== j) {
+          // if left pointer is smaller than the right pointer,
+          // swap the items
+          const temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        i += 1;
+        j -= 1;
+      }
+    }
+    return i;
+  }
 }
 
 module.exports = Sorting;

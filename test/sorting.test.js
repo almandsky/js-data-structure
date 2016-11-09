@@ -28,4 +28,10 @@ describe('Sorting Test', () => {
     expect(Sorting.mergeSort(testArray1.concat())).to.deep.equal(sortedArray);
     expect(Sorting.mergeSort(testArray2.concat())).to.deep.equal(sortedArray);
   });
+
+  it('should quick sort an array', () => {
+    expect(Sorting.quickSort(undefined)).to.deep.equal(undefined);
+    expect(Sorting.quickSort(testArray1.concat())).to.deep.equal(sortedArray);
+    expect(Sorting.quickSort(testArray2.concat())).to.deep.equal(sortedArray);
+  });
 });
