@@ -1,5 +1,3 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
-
 class Search {
 
   /**
