@@ -52,7 +52,7 @@ describe('Tree Test', () => {
   it('should return the min value a tree', () => {
     expect(binarySearchTree.min()).to.equal(2);
 
-    const binarySearchTree2 = new BinarySearchTree()
+    const binarySearchTree2 = new BinarySearchTree();
 
     expect(binarySearchTree2.min()).to.equal(null);
 
@@ -63,10 +63,10 @@ describe('Tree Test', () => {
   it('should return the max value a tree', () => {
     expect(binarySearchTree.max()).to.equal(9);
 
-    const binarySearchTree2 = new BinarySearchTree()
+    const binarySearchTree2 = new BinarySearchTree();
 
     expect(binarySearchTree2.max()).to.equal(null);
-    
+
     binarySearchTree2.insert(1);
     expect(binarySearchTree2.max()).to.equal(1);
   });
@@ -109,14 +109,15 @@ describe('Tree Test', () => {
     ***************************
                  5
                /   \
-              3     9
-               \   / 
-                4 7  
+              3     13
+             /     /  \
+            1     7   19
     ***************************
     */
     expect(binarySearchTree.root.key).to.equal(5);
     expect(binarySearchTree.root.left.key).to.equal(3);
     expect(binarySearchTree.root.right.key).to.equal(13); // 8 and 9 were removed
+    expect(binarySearchTree.root.right.right.key).to.equal(19);
     expect(binarySearchTree.root.right.left.key).to.equal(7);
     expect(binarySearchTree.root.left.left.key).to.equal(1); // 2 was removed.
     expect(binarySearchTree.root.left.right).to.equal(null); // 4 was removed
