@@ -11,12 +11,6 @@ The code here is copying from https://github.com/loiane/javascript-datastructure
 
 I am also rewriting it by using the node js to execute the example, and will also try to make some improvement on the implementation.
 
-## How to run the code
-
-```bash
-node ./lib-exec/usingGraph.js
-```
-
 ## How to run the test
 
 ```bash
@@ -34,4 +28,10 @@ Start integrating with the babel to support ES6.
 import { Sorting } from 'js-data-structure';
 console.log(Sorting.bubbleSort([5, 4, 3, 2, 1]));
 
+```
+
+## How to run the code
+
+```bash
+node ./lib-exec/usingGraph.js
 ```
