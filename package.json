@@ -26,8 +26,18 @@
   },
   "keywords": [
     "JavaScript",
+    "js",
     "Data",
-    "Structure"
+    "Structure",
+    "algorithm",
+    "queue",
+    "tree",
+    "graph",
+    "bfs",
+    "dfs",
+    "sorting",
+    "search",
+    "ES6"
   ],
   "author": "almandsky",
   "license": "MIT",

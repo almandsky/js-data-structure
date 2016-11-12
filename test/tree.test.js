@@ -1,4 +1,4 @@
-import { BinarySearchTree } from '../src/lib-es6/tree';
+import BinarySearchTree from '../src/lib-es6/tree';
 
 const expect = require('chai').expect;
 

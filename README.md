@@ -7,20 +7,68 @@
 [![MTI License](https://img.shields.io/npm/l/js-data-structure.svg)](http://opensource.org/licenses/MIT)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-The code here is copying from https://github.com/loiane/javascript-datastructures-algorithms, and the purpose is to make it easier to reference without the folder structure of the book chapter.
 
-I am also rewriting it by using the node js to execute the example, and will also try to make some improvement on the implementation.
+Java Script Data Structure implemented in ES6.  It covers the implementation of the basic data structures, including graph, tree, queue, and some sorting and search algorithm for array.
 
-## How to run the test
+The code here is rewriting from [Learning JavaScript Data Structures and Algorithms](https://github.com/loiane/javascript-datastructures-algorithms), and added the unit tests for each of the data structure.
+
+
+## How to install and run the test
 
 ```bash
 npm install;
 npm test;
 ```
 
-## Using ES6
+## Usage
 
-Start integrating with the babel to support ES6.
+```
+// Using Graph
+import { Graph } from 'js-data-structure';
+const graph = new Graph();
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addVertex('E');
+graph.addVertex('F');
+graph.addVertex('G');
+graph.addVertex('H');
+graph.addVertex('I');
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('C', 'F');
+graph.addEdge('D', 'E');
+graph.addEdge('E', 'G');
+graph.addEdge('E', 'I');
+graph.addEdge('F', 'E');
+graph.addEdge('G', 'H');
+graph.addEdge('H', 'I');
+
+/*
+************************
+Graph generated
+************************
+ A -> B
+ |    |
+ \/   \/
+ C    D
+ |    |
+ \/   \/
+ F -> E  -> G
+      |     |
+      \/    \/
+      I  <- H
+************************
+*/
+
+// get the shortest path
+const shortestPath = graph.getShortestPath('A', 'I');
+console.log(shortestPath) // ['A', 'B', 'D', 'E', 'I']
+
+
+```
 
 ## include in the browser
 
@@ -30,8 +78,6 @@ console.log(Sorting.bubbleSort([5, 4, 3, 2, 1]));
 
 ```
 
-## How to run the code
+## License
 
-```bash
-node ./lib-exec/usingGraph.js
-```
+MIT © [Sky Chen](https://www.skychen.com)

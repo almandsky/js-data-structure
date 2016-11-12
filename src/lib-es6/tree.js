@@ -12,6 +12,13 @@ class BinarySearchTree {
   constructor() {
     this.root = null;
   }
+
+  /**
+   * Add an object to the tree
+   * @method insert
+   * @param {Object} key - the new object to be inserted to the tree
+   * @return {Void}
+   */
   insert(key) {
     const node = new Node(key);
     if (!this.root) {
@@ -21,6 +28,13 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * Add a new node to the specific node
+   * @method insertNode
+   * @param {Node} node - parent node to be insert into
+   * @param {Node} newNode - new node to be inserted
+   * @return {Void}
+   */
   insertNode(node, newNode) {
     if (newNode.key < node.key) {
       if (!node.left) {
@@ -35,10 +49,23 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * in-order traverse a tree, visit the node in ascending order.
+   * @method inOrderTraverse
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   inOrderTraverse(callback) {
     this.inOrderTraverseNode(this.root, callback);
   }
 
+  /**
+   * Recersive function to in-order traverse a tree for specific node
+   * @method inOrderTraverseNode
+   * @param {Node} node - target node to be traversed
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   inOrderTraverseNode(node, callback) {
     if (node !== null) {
       this.inOrderTraverseNode(node.left, callback);
@@ -47,10 +74,23 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * pre-order traverse a tree, the root is the first node visited.
+   * @method preOrderTraverse
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   preOrderTraverse(callback) {
     this.preOrderTraverseNode(this.root, callback);
   }
 
+  /**
+   * Recersive function to pre-order traverse a tree for specific node
+   * @method preOrderTraverseNode
+   * @param {Node} node - target node to be traversed
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   preOrderTraverseNode(node, callback) {
     if (node !== null) {
       callback(node);
@@ -59,10 +99,23 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * post-order traverse a tree, the root is the last node visited.
+   * @method postOrderTraverse
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   postOrderTraverse(callback) {
     this.postOrderTraverseNode(this.root, callback);
   }
 
+  /**
+   * Recersive function to post-order traverse a tree for specific node
+   * @method postOrderTraverseNode
+   * @param {Node} node - target node to be traversed
+   * @param {Function} callback - the callback function to be executed
+   * @return {Void}
+   */
   postOrderTraverseNode(node, callback) {
     if (node !== null) {
       this.postOrderTraverseNode(node.left, callback);
@@ -71,6 +124,25 @@ class BinarySearchTree {
     }
   }
 
+  /**
+   * Get the min node of the tree
+   * @method min
+   * @return {Object} The min value (object) of the tree
+   */
+  min() {
+    const minimumNode = BinarySearchTree.minNode(this.root);
+    if (minimumNode !== null) {
+      return minimumNode.key;
+    }
+    return null;
+  }
+
+  /**
+   * Get the min node of specific node (sub-tree)
+   * @method minNode
+   * @param {Node} node - the callback function to be executed
+   * @return {Node} the smallest node
+   */
   static minNode(node) {
     let pointer = node;
     if (pointer) {
@@ -82,15 +154,11 @@ class BinarySearchTree {
     return null;
   }
 
-  min() {
-    const minimumNode = BinarySearchTree.minNode(this.root);
-    if (minimumNode !== null) {
-      return minimumNode.key;
-    }
-    return null;
-  }
-
-
+  /**
+   * Get the max node of the tree
+   * @method max
+   * @return {Object} The max value (object) of the tree
+   */
   max() {
     const maximumNode = BinarySearchTree.maxNode(this.root);
     if (maximumNode !== null) {
@@ -99,6 +167,12 @@ class BinarySearchTree {
     return null;
   }
 
+  /**
+   * Get the max node of specific node (sub-tree)
+   * @method maxNode
+   * @param {Node} node - the callback function to be executed
+   * @return {Node} the largest node
+   */
   static maxNode(node) {
     let pointer = node;
     if (pointer) {
@@ -110,10 +184,23 @@ class BinarySearchTree {
     return null;
   }
 
+  /**
+   * Search a object or value in the tree
+   * @method search
+   * @param {Object} key - The object or value to search for
+   * @return {Boolean} if the key is found
+   */
   search(key) {
     return this.searchNode(this.root, key);
   }
 
+  /**
+   * Recursive search function to find a object or value in the node
+   * @method searchNode
+   * @param {Node} node - node to be searched for the key
+   * @param {Object} key - The object or value to search for
+   * @return {Boolean} if the key is found
+   */
   searchNode(node, key) {
     if (node === null) {
       return false;
@@ -128,10 +215,23 @@ class BinarySearchTree {
     return key === node.key;
   }
 
+  /**
+   * Remove a object or value in the tree
+   * @method remove
+   * @param {Object} key - The object or value to be removed
+   * @return {Void}
+   */
   remove(key) {
     this.root = this.removeNode(this.root, key);
   }
 
+  /**
+   * Remove a object or value in the sub-tree
+   * @method removeNode
+   * @param {Node} node - the root of the sub tree
+   * @param {Object} key - The object or value to be removed
+   * @return {Node} the new tree after removing the key
+   */
   removeNode(node, key) {
     let pointer = node;
     if (pointer === null) {
@@ -150,10 +250,12 @@ class BinarySearchTree {
     }
 
     if (pointer.left === null && pointer.right === null) {
+      // the target node is a leaf
       pointer = null;
       return pointer;
     }
 
+    // the target node has one child
     if (pointer.left === null) {
       pointer = pointer.right;
       return pointer;
@@ -162,13 +264,15 @@ class BinarySearchTree {
       return pointer;
     }
 
-    const aux = BinarySearchTree.minNode(pointer.right);
-    pointer.key = aux.key;
-    pointer.right = this.removeNode(pointer.right, aux.key);
+    // the target node has 2 children
+    // get the smallest node from the right sub-tree
+    const temp = BinarySearchTree.minNode(pointer.right);
+    pointer.key = temp.key;
+    // recursively update the right child,
+    // it will be the new tree with the smallest item removed.
+    pointer.right = this.removeNode(pointer.right, temp.key);
     return pointer;
   }
 }
 
-module.exports = {
-  BinarySearchTree
-};
+module.exports = BinarySearchTree;
