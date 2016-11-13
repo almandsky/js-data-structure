@@ -152,7 +152,7 @@ class Graph {
   }
 
   /**
-   * The recursive function to DFS traverse the vertices 
+   * The recursive function to DFS traverse the vertices
    * @method dfsVisit
    * @param {Object} v - the current visiting vertex
    * @param {Object} visited - dictionary for marking the node visited or not
