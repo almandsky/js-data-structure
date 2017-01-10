@@ -68,7 +68,6 @@ const shortestPath = graph.getShortestPath('A', 'I');
 console.log(shortestPath) // ['A', 'B', 'D', 'E', 'I']
 
 
-
 ```
 
 ## include in the browser
