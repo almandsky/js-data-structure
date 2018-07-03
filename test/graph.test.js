@@ -1,6 +1,6 @@
 import Graph from '../src/lib-es6/graph';
 
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 function generateTestGraph() {
   const graph = new Graph();
@@ -96,7 +96,9 @@ describe('Graph Test', () => {
     result = [];
     resultObj = graph.bfs('B', visitNode);
     expect(result).to.deep.equal(['B', 'D', 'E', 'G', 'I', 'H']);
-    expect(resultObj.distances).to.deep.equal({ B: 0, D: 1, E: 2, G: 3, I: 3, H: 4 });
+    expect(resultObj.distances).to.deep.equal({
+      B: 0, D: 1, E: 2, G: 3, I: 3, H: 4
+    });
     expect(resultObj.predecessors).to.deep.equal({
       B: null,
       D: 'B',
@@ -109,7 +111,9 @@ describe('Graph Test', () => {
     result = [];
     resultObj = graph.bfs('C', undefined);
     expect(result).to.deep.equal([]);
-    expect(resultObj.distances).to.deep.equal({ C: 0, F: 1, E: 2, G: 3, I: 3, H: 4 });
+    expect(resultObj.distances).to.deep.equal({
+      C: 0, F: 1, E: 2, G: 3, I: 3, H: 4
+    });
     expect(resultObj.predecessors).to.deep.equal({
       C: null,
       F: 'C',

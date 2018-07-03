@@ -1,5 +1,4 @@
 class Search {
-
   /**
    * Sequentially search an item in the array
    * Complexity: Θ(n)

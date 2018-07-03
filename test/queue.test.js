@@ -1,6 +1,6 @@
 import Queue from '../src/lib-es6/queue';
 
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 describe('Queue Test', () => {
   it('should enqueue an item to the queue', () => {

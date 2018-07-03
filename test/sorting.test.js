@@ -2,7 +2,7 @@ import Sorting from '../src/lib-es6/sorting';
 
 import { testArray1, testArray2, sortedArray } from './sorting.mock';
 
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 describe('Sorting Test', () => {
   it('should bubble sort an array', () => {
