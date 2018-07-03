@@ -66,7 +66,6 @@ class Queue {
   toString() {
     return JSON.stringify(this.items);
   }
-
 }
 
 module.exports = Queue;

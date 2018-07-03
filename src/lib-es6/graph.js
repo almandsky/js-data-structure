@@ -89,8 +89,8 @@ class Graph {
    * @return {Array} shortest path in array format. Empty array means no shortest path
    */
   getShortestPath(sourceVertex, destVertex) {
-    if (!{}.hasOwnProperty.call(this.adjList, sourceVertex) ||
-      !{}.hasOwnProperty.call(this.adjList, destVertex)) {
+    if (!{}.hasOwnProperty.call(this.adjList, sourceVertex)
+      || !{}.hasOwnProperty.call(this.adjList, destVertex)) {
       // vertex not exist
       return [];
     }

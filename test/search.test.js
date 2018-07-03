@@ -1,6 +1,6 @@
 import Search from '../src/lib-es6/search';
 
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 const testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

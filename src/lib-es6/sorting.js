@@ -1,7 +1,5 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
-
 class Sorting {
-
   /**
    * bubble sort
    * Complexity: Θ(n^2)
@@ -93,10 +91,10 @@ class Sorting {
     if (!array || !array.length || array.length === 1) {
       return array;
     }
-    const length = array.length;
-    const mid = Math.floor(length / 2);
+    const len = array.length;
+    const mid = Math.floor(len / 2);
     const left = array.slice(0, mid);
-    const right = array.slice(mid, length);
+    const right = array.slice(mid, len);
 
     return this.merge(this.mergeSort(left), this.mergeSort(right));
   }

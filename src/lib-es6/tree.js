@@ -208,7 +208,9 @@ class BinarySearchTree {
 
     if (key < node.key) {
       return this.searchNode(node.left, key);
-    } else if (key > node.key) {
+    }
+
+    if (key > node.key) {
       return this.searchNode(node.right, key);
     }
 
@@ -241,10 +243,12 @@ class BinarySearchTree {
     if (key < pointer.key) {
       pointer.left = this.removeNode(pointer.left, key);
       return pointer;
-    } else if (key > pointer.key) {
+    }
+    if (key > pointer.key) {
       pointer.right = this.removeNode(pointer.right, key);
       return pointer;
-    } else if (key !== pointer.key) {
+    }
+    if (key !== pointer.key) {
       // key value not exist in the tree
       return pointer;
     }
@@ -259,7 +263,8 @@ class BinarySearchTree {
     if (pointer.left === null) {
       pointer = pointer.right;
       return pointer;
-    } else if (pointer.right === null) {
+    }
+    if (pointer.right === null) {
       pointer = pointer.left;
       return pointer;
     }
