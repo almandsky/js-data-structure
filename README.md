@@ -20,6 +20,12 @@ npm install;
 npm test;
 ```
 
+## How to commit the code to release a new version via semantically-released
+
+```bash
+npm run commit;
+```
+
 ## Usage
 
 ```
