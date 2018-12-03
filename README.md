@@ -24,6 +24,7 @@ npm test;
 
 ```bash
 npm run commit;
+
 ```
 
 ## Usage
