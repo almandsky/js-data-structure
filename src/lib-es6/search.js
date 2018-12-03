@@ -54,4 +54,4 @@ class Search {
   }
 }
 
-module.exports = Search;
+export default Search;

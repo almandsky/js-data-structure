@@ -2,26 +2,30 @@ import BinarySearchTree from '../src/lib-es6/tree';
 
 const { expect } = require('chai');
 
-const binarySearchTree = new BinarySearchTree();
+function generateTestTree() {
+  const binarySearchTree = new BinarySearchTree();
+  binarySearchTree.insert(5);
+  binarySearchTree.insert(3);
+  binarySearchTree.insert(8);
+  binarySearchTree.insert(7);
+  binarySearchTree.insert(2);
+  binarySearchTree.insert(4);
+  binarySearchTree.insert(9);
+  /*
+  ***************************
+                5
+              /   \
+            3     8
+            / \   / \
+          2   4 7   9
+  ***************************
+  */
+  return binarySearchTree;
+}
 
 describe('Tree Test', () => {
   it('should insert a node to a tree', () => {
-    binarySearchTree.insert(5);
-    binarySearchTree.insert(3);
-    binarySearchTree.insert(8);
-    binarySearchTree.insert(7);
-    binarySearchTree.insert(2);
-    binarySearchTree.insert(4);
-    binarySearchTree.insert(9);
-    /*
-    ***************************
-                 5
-               /   \
-              3     8
-             / \   / \
-            2   4 7   9
-    ***************************
-    */
+    const binarySearchTree = generateTestTree();
     expect(binarySearchTree.root.key).to.equal(5);
     expect(binarySearchTree.root.left.key).to.equal(3);
     expect(binarySearchTree.root.right.key).to.equal(8);
@@ -33,23 +37,27 @@ describe('Tree Test', () => {
 
   it('should in-order traverse a tree', () => {
     const result = [];
+    const binarySearchTree = generateTestTree();
     binarySearchTree.inOrderTraverse((node) => { result.push(node.key); });
     expect(result).to.deep.equal([2, 3, 4, 5, 7, 8, 9]);
   });
 
   it('should pre-order traverse a tree', () => {
     const result = [];
+    const binarySearchTree = generateTestTree();
     binarySearchTree.preOrderTraverse((node) => { result.push(node.key); });
     expect(result).to.deep.equal([5, 3, 2, 4, 8, 7, 9]);
   });
 
   it('should post-order traverse a tree', () => {
     const result = [];
+    const binarySearchTree = generateTestTree();
     binarySearchTree.postOrderTraverse((node) => { result.push(node.key); });
     expect(result).to.deep.equal([2, 4, 3, 7, 9, 8, 5]);
   });
 
   it('should return the min value a tree', () => {
+    const binarySearchTree = generateTestTree();
     expect(binarySearchTree.min()).to.equal(2);
 
     const binarySearchTree2 = new BinarySearchTree();
@@ -61,6 +69,7 @@ describe('Tree Test', () => {
   });
 
   it('should return the max value a tree', () => {
+    const binarySearchTree = generateTestTree();
     expect(binarySearchTree.max()).to.equal(9);
 
     const binarySearchTree2 = new BinarySearchTree();
@@ -72,6 +81,7 @@ describe('Tree Test', () => {
   });
 
   it('should search a value in a tree', () => {
+    const binarySearchTree = generateTestTree();
     expect(binarySearchTree.search(8)).to.equal(true);
     expect(binarySearchTree.search(10)).to.equal(false);
     expect(binarySearchTree.search(0)).to.equal(false);
@@ -82,6 +92,7 @@ describe('Tree Test', () => {
   });
 
   it('should remove a value in a tree', () => {
+    const binarySearchTree = generateTestTree();
     binarySearchTree.insert(1);
     binarySearchTree.insert(15);
     binarySearchTree.insert(13);
@@ -125,5 +136,42 @@ describe('Tree Test', () => {
     const binarySearchTree2 = new BinarySearchTree();
     binarySearchTree2.remove(100);
     expect(binarySearchTree2.root).to.equal(null);
+  });
+
+  it('should return the height of the tree', () => {
+    const emptyTree = new BinarySearchTree();
+    expect(emptyTree.getHeight()).to.equal(-1);
+
+    const binarySearchTree = generateTestTree();
+    expect(binarySearchTree.getHeight()).to.equal(2);
+
+    binarySearchTree.insert(13);
+    expect(binarySearchTree.getHeight()).to.equal(3);
+
+    binarySearchTree.insert(1);
+    expect(binarySearchTree.getHeight()).to.equal(3);
+
+    binarySearchTree.insert(19);
+    expect(binarySearchTree.getHeight()).to.equal(4);
+
+    binarySearchTree.insert(12);
+    expect(binarySearchTree.getHeight()).to.equal(4);
+
+    binarySearchTree.insert(15);
+    expect(binarySearchTree.getHeight()).to.equal(5);
+  });
+
+  it('should return if the tree is balance', () => {
+    const emptyTree = new BinarySearchTree();
+    expect(emptyTree.isBalance()).to.equal(true);
+
+    const binarySearchTree = generateTestTree();
+    expect(binarySearchTree.isBalance()).to.equal(true);
+
+    binarySearchTree.insert(13);
+    expect(binarySearchTree.isBalance()).to.equal(true);
+
+    binarySearchTree.insert(15);
+    expect(binarySearchTree.isBalance()).to.equal(false);
   });
 });

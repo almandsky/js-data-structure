@@ -211,4 +211,4 @@ class Sorting {
   }
 }
 
-module.exports = Sorting;
+export default Sorting;

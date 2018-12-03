@@ -28,7 +28,7 @@ class Queue {
    * @return {Object} the first item in the queue
    */
   front() {
-    return this.items[0];
+    return this.isEmpty() ? null : this.items[0];
   }
 
   /**
@@ -68,4 +68,4 @@ class Queue {
   }
 }
 
-module.exports = Queue;
+export default Queue;
