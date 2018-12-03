@@ -61,6 +61,15 @@ describe('Graph Test', () => {
     expect(graph.toString()).to.equal(str);
   });
 
+  it('should not allow duplicated vertices to a Graph', () => {
+    const graph = new Graph();
+    graph.addVertex('A');
+    graph.addVertex('A');
+    expect(graph.vertices[0]).to.equal('A');
+    expect(graph.vertices[1]).to.equal(undefined);
+    expect(graph.adjList).to.deep.equal({ A: [] });
+  });
+
   it('should breath-first search a Graph', () => {
     const graph = generateTestGraph();
 

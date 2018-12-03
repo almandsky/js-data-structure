@@ -140,7 +140,7 @@ class BinarySearchTree {
   /**
    * Get the min node of specific node (sub-tree)
    * @method minNode
-   * @param {Node} node - the callback function to be executed
+   * @param {Node} node
    * @return {Node} the smallest node
    */
   static minNode(node) {
@@ -170,7 +170,7 @@ class BinarySearchTree {
   /**
    * Get the max node of specific node (sub-tree)
    * @method maxNode
-   * @param {Node} node - the callback function to be executed
+   * @param {Node} node
    * @return {Node} the largest node
    */
   static maxNode(node) {
@@ -278,6 +278,67 @@ class BinarySearchTree {
     pointer.right = this.removeNode(pointer.right, temp.key);
     return pointer;
   }
+
+  /**
+   * Get height of the provided tree node
+   * @method nodeHeight
+   * @param {Node} node
+   * @return {Number} the height of the node
+   */
+  static nodeHeight(node) {
+    if (!node) {
+      return -1;
+    }
+    return Math.max(this.nodeHeight(node.left), this.nodeHeight(node.right)) + 1;
+  }
+
+  /**
+   * Get height of the tree
+   * @method nodeHeight
+   * @return {Number} the height of the tree
+   */
+  getHeight() {
+    if (this.root === null) {
+      return -1;
+    }
+    return BinarySearchTree.nodeHeight(this.root);
+  }
+
+  /**
+   * Check if the Binary Search Tree is balance or not
+   * @method isBalance
+   * @return {Boolean} the new tree after removing the key
+   */
+  isBalance() {
+    if (this.root === null) {
+      return true;
+    }
+    return BinarySearchTree.checkBalance(this.root);
+  }
+
+  /**
+   * Check if the provided node is balance or not
+   * @method checkBalance
+   * @param {Node} node
+   * @return {Boolean} the new tree after removing the key
+   */
+
+  static checkBalance(node) {
+    if (!node) {
+      return true;
+    }
+
+    const leftHeight = BinarySearchTree.nodeHeight(node.left);
+    const rightHeight = BinarySearchTree.nodeHeight(node.right);
+    const heightDiff = leftHeight - rightHeight;
+
+    if (Math.abs(heightDiff) > 1) {
+      return false;
+    }
+    return BinarySearchTree.checkBalance(node.left) && BinarySearchTree.checkBalance(node.right);
+  }
+
+  // TODO: print the tree
 }
 
-module.exports = BinarySearchTree;
+export default BinarySearchTree;

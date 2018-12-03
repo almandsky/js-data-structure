@@ -9,8 +9,11 @@ class Graph {
   }
 
   addVertex(v) {
-    this.vertices.push(v);
-    this.adjList[v] = [];
+    // only create new vertice if it is not exists
+    if (this.vertices.indexOf(v) < 0) {
+      this.vertices.push(v);
+      this.adjList[v] = [];
+    }
   }
 
   addEdge(v, w) {
@@ -185,4 +188,4 @@ class Graph {
   }
 }
 
-module.exports = Graph;
+export default Graph;

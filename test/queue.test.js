@@ -86,4 +86,13 @@ describe('Queue Test', () => {
 
     expect(queue.toString()).to.deep.equal('[1,2,3,4]');
   });
+
+  it('should not throw exception when get front for empty queue', () => {
+    const queue = new Queue();
+    const result = queue.front();
+    expect(result).to.equals(null);
+    queue.enqueue(1);
+    const result2 = queue.front();
+    expect(result2).to.equal(1);
+  });
 });
