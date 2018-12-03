@@ -159,6 +159,9 @@ describe('Tree Test', () => {
 
     binarySearchTree.insert(15);
     expect(binarySearchTree.getHeight()).to.equal(5);
+
+    binarySearchTree.insert(10);
+    expect(binarySearchTree.getHeight()).to.equal(5);
   });
 
   it('should return if the tree is balance', () => {
