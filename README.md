@@ -85,6 +85,10 @@ console.log(Sorting.bubbleSort([5, 4, 3, 2, 1]));
 
 ```
 
+## Contact us
+
+Please chat with us via https://gitter.im/almandsky-js-data-structure/community
+
 ## License
 
 MIT © [Sky Chen](https://www.skychen.com)
